@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Steambuy</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"> <!-- Добавлен favicon -->
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'images/dragon-2.png' %}" alt="Логотип">
+                DarkSteam
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Главная</a>
+                <a href="#" class="nav-link">Магазин</a>
+                <a href="#" class="nav-link">Акции</a>
+                <a href="#" class="nav-link">Поддержка</a>
+            </nav>
+            <div class="user-actions">
+                <button class="btn-login">Войти</button>
+                <button class="btn-cart">Корзина</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero-секция -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Лучшие игры по лучшим ценам</h1>
+        </div>
+    </section>
+
+    <!-- Секция с популярными играми -->
+    <section class="featured-games">
+        <div class="container">
+            <!-- Строка поиска -->
+            <div class="search-bar">
+                <input type="search" placeholder="Поиск игр..." class="search-input">
+                <button class="btn-search">Найти</button>
+            </div>
+
+            <h2 class="section-title">Популярные игры</h2>
+            <div id="games-grid" class="games-grid">
+                {% for game in games %}
+                    <div class="game-card">
+                        <img src="{{ game.picture.url }}" alt="{{ game.title }}" class="game-image">
+                        <h3 class="game-title">{{ game.title }}</h3>
+                        <p class="game-price">${{ game.price }}</p>
+                        <button class="btn-buy">Купить</button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Кнопка для подгрузки дополнительных игр -->
+            <button id="load-more" class="btn-search">Показать еще</button>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 DarkSteam. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Общий контейнер */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+.header {
+    background-color: #111111;
+    padding: 20px 0;
+    border-bottom: 1px solid #333333;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.logo img {
+    width: 50px; /* Уменьшен размер логотипа */
+    height: 50px; /* Сохраняем пропорции */
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    color: #ff6600;
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login, .btn-cart {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-login:hover, .btn-cart:hover {
+    background-color: #ff6600;
+}
+
+/* Hero-секция */
+.hero {
+    background-image: url('images/game_background_converted.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+/*.hero {
+    background-image: url("{% static 'images/game_background_converted.jpg' %}");
+    background-size: cover; /* Заполняем фон секции */
+    background-position: center; /* Центрируем изображение */
+    background-attachment: fixed; /* Фиксируем фон при прокрутке */
+    height: 100vh; /* Задаем высоту секции на весь экран */
+}*/
+
+.hero-title {
+    font-size: 60px; /* Увеличен размер заголовка */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Добавлена тень для читаемости */
+}
+
+/* Секция с играми */
+.featured-games {
+    padding: 50px 0;
+    background-color: #1a1a1a;
+}
+
+.featured-games .container {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* Строка поиска */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-top: 40px; /* Добавлен отступ сверху */
+}
+
+.search-input {
+    width: 400px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px; /* Уменьшенное закругление */
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.btn-search {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px; /* Уменьшенное закругление */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-search:hover {
+    background-color: #e65c00;
+}
+
+/* Блоки с играми */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.game-card {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.game-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.game-title {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+
+.game-price {
+    font-size: 18px;
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background-color: #ff6600;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-buy:hover {
+    background-color: #e65c00;
+}
+
+/* Футер */
+.footer {
+    background-color: #111111;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #333333;
+}
+
+.footer p {
+    margin: 0;
+    color: #cccccc;
+}
