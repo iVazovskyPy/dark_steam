@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Steambuy</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico"> <!-- Добавлен favicon -->
 </head>
@@ -23,8 +24,15 @@
                 <a href="#" class="nav-link">Поддержка</a>
             </nav>
             <div class="user-actions">
-                <button class="btn-login">Войти</button>
-                <button class="btn-cart">Корзина</button>
+                {% if user.is_authenticated %}
+                    <form method="POST" action="{% url 'users:logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-logout">Выход</button>
+                    </form>
+                    <button class="btn-cart">Корзина</button>  <!-- Показываем, если пользователь авторизован -->
+                {% else %}
+                    <a href="{% url 'users:register' %}"><button class="btn-login">Регистрация</button></a>  <!-- Показываем, если пользователь не авторизован -->
+                {% endif %}
             </div>
         </div>
     </header>

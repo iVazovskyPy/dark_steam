@@ -78,7 +78,9 @@ body {
 
 /* Hero-секция */
 .hero {
-    background-image: url('static/images/game_background_converted.jpg');
+    /* background-image: url('static/images/game_background_converted.jpg'); */
+    /* background-image: url('{% static "images/game_background_converted.jpg" %}'); */
+    background-image: url('http://127.0.0.1:8000/static/images/game_background_converted.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
